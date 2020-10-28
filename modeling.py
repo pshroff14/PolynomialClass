@@ -99,6 +99,19 @@ class Polynomial():
 
         return evalpoly
 
+    def __der__(self):
+        poly = self.poly
+        der = []
+        alpha = 0
+        power = len(poly)-1
+
+        for i in range(len(poly)):
+            alpha = poly[i] * (power-i)
+            der.append(alpha)
+        der.remove(0)
+        return der 
+
+
 
 print(__name__)
 
