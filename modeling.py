@@ -17,6 +17,38 @@ class Polynomial():
         # for i in range(a):
         #     print(array[i], 'x^', a - i, "  ", sep='', end='')
 
+    def __add__(self, a=[], b=[]):
+        c = []
+
+        while len(a) > len(b):
+            b.append(0)
+
+        while len(a) < len(b):
+            a.append(0)
+
+        for i in range(len(a)):
+            c.append(a[i] + b[i])
+
+        # print(c) if you want to see result
+        return c
+
+    def __sub__(self, a=[], b=[]):
+        c = []
+
+        while len(a) > len(b):
+            b.append(0)
+
+        while len(a) < len(b):
+            a.append(0)
+
+        for i in range(len(a)):
+            c.append(a[i] - b[i])
+
+        # print(c) if you want to see result
+        return c
+
+
+
     # implement multiplication of polynomials using *
     def __mul__(self, a=[], b=[]):
         c = [0]
@@ -46,13 +78,12 @@ class Polynomial():
             return False
 
         else:
-            #Stuck Here
+            # Stuck Here
             for i in range(len(a)):
                 if a[i] == b[i]:
                     continue
                 else:
                     return False
-
 
     def __eval__(self, x=0):
         poly = self.poly
